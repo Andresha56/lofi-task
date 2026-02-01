@@ -31,16 +31,6 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/links", linkRoutes);
 app.use("/api/colors", colorRoutes);
 
-// Serve frontend
-// Path for static assets (build)
-// if (process.env.ENV === "prod") {
-//   app.use(express.static(path.join("./", "frontend", "build")));
-
-//   // Serve index.html
-//   app.get("*", (req, res) =>
-//     res.sendFile(path.resolve("./", "frontend", "build", "index.html"))
-//   );
-// }
 
 // Custom error handler middleware ()
 app.use(errorHandler);

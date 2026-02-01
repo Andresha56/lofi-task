@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const StyledSoundPlayers = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
-  grid-gap: 20px;
+  grid-gap: 30px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
 
   /* Phone */
   @media (max-width: 768px) {
@@ -17,4 +18,5 @@ export const StyledSoundPlayers = styled.div`
   @media (max-width: 820px) {
     flex: 1;
   }
+  
 `;

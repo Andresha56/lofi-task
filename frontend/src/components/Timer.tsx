@@ -99,7 +99,7 @@ const Timer = () => {
         {`${remainingTime.seconds}`.padStart(2, "0")}
       </h1>
 
-      <Flex direction="row">
+      <Flex direction="row" gap="20px">
         <IconButton
           icon={"plus"}
           onClick={incrementTime}

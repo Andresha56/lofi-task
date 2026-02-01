@@ -1,15 +1,34 @@
-import { StyledSoundPlayers } from "../styles/SoundPlayers.styled";
 import SoundPlayer from "./SoundPlayer";
+import { StyledSoundPlayers } from "../styles/SoundPlayers.styled";
 
-const SoundPlayers = () => {
+interface Props {
+  activeSound: string | null;
+  setActiveSound: (sound: string) => void;
+  volumes: Record<string, number>;
+}
+
+const SOUNDS = {
+  rain: "rain.mp3",
+  fire: "fireplace.mp3",
+  wind: "storm.mp3",
+  bird: "bird.mp3",
+  moon: "night.mp3",
+  coffee: "restaurant.mp3",
+};
+
+const SoundPlayers = ({ activeSound, setActiveSound, volumes }: Props) => {
   return (
     <StyledSoundPlayers>
-      <SoundPlayer soundName={"rain"} audioFileName={"rain.mp3"} />
-      <SoundPlayer soundName={"fire"} audioFileName={"fireplace.mp3"} />
-      <SoundPlayer soundName={"wind"} audioFileName={"storm.mp3"} />
-      <SoundPlayer soundName={"bird"} audioFileName={"bird.mp3"} />
-      <SoundPlayer soundName={"moon"} audioFileName={"night.mp3"} />
-      <SoundPlayer soundName={"coffee"} audioFileName={"restaurant.mp3"} />
+      {Object.entries(SOUNDS).map(([name, file]) => (
+        <SoundPlayer
+          key={name}
+          soundName={name}
+          audioFileName={file}
+          volume={volumes[name]}
+          isActive={activeSound === name}
+          onSelect={() => setActiveSound(name)}
+        />
+      ))}
     </StyledSoundPlayers>
   );
 };

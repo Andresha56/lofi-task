@@ -115,11 +115,11 @@ const Radio = () => {
           <IconButton
             icon="playlist"
             onClick={handleOnClick}
-            height={40}
-            width={40}
+            height={30}
+            width={30}
           />
         </StyledRadioMedia>
-        <h1>{currentLink.title}</h1>
+        {/* <h1>{currentLink.title}</h1> */}
         <ReactPlayer
           url={currentLink.url}
           playing={isPlaying}

@@ -11,42 +11,33 @@ interface Props {
 const Task = ({ task, onDelete, onToggle }: Props) => {
   return (
     <StyledTask>
-      {task.isDone ? (
-        <>
-          <h2 className="strike-through">{task.text}</h2>
-          <IconButton
-            onClick={() => onToggle(task)}
-            icon={"tick"}
-            height={30}
-            width={30}
-          />
-          <IconButton
-            onClick={() => onDelete(task)}
-            icon={"cross"}
-            height={30}
-            width={30}
-          />
-        </>
-      ) : (
-        <>
-          <h2>{task.text}</h2>
-          <IconButton
-            onClick={() => onToggle(task)}
-            icon={"tick"}
-            height={30}
-            width={30}
-          />
-          <IconButton
-            onClick={() => onDelete(task)}
-            icon={"cross"}
-            height={30}
-            width={30}
-          />
-        </>
-      )}
-
-      {}
-    </StyledTask>
+      <div className={!task.isDone ? "pending-task" : "completed-task"}>
+        <p>{task.text}</p>
+        {
+          !task.isDone ? (
+            <IconButton
+              onClick={() => onToggle(task)}
+              icon={"tick"}
+              height={18}
+              width={18}
+            />
+          ) : (
+            <IconButton
+              onClick={() => onToggle(task)}
+              icon={"doubleTick"}
+              height={18}
+              width={18}
+            />
+          )
+        }
+        <IconButton
+          onClick={() => onDelete(task)}
+          icon={"cross"}
+          height={15}
+          width={15}
+        />
+      </div>
+    </StyledTask >
   );
 };
 

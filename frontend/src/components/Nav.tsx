@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const buttonSound = new Audio("button_sound.mp3");
 buttonSound.volume = 0.2;
 
-const Nav = () => {
+export const Nav = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,7 +30,6 @@ const Nav = () => {
     <StyledNav>
       {user ? (
         <>
-          <h1>welcome back, {user.name.toLowerCase()}</h1>
           <ul className="ul-btn">
             <li>
               <IconButton
@@ -64,4 +63,3 @@ const Nav = () => {
   );
 };
 
-export default Nav;

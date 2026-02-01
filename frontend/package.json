@@ -21,7 +21,6 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "typescript": "~4.1.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -32,7 +31,9 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-howler": "^5.2.0",
     "@types/react-redux": "^7.1.7",
-    "@types/styled-components": "^5.1.24"
+    "@types/styled-components": "^5.1.24",
+    "sass": "^1.97.3",
+    "typescript": "~4.1.5"
   },
   "scripts": {
     "start": "react-scripts start",

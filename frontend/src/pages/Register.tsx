@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { RootState } from "../app/store";
 import { StyledRegister } from "../styles/Register.styled";
-import Nav from "../components/Nav";
+import { Nav } from "../components/Nav";
 
 const buttonSound = new Audio("button_sound.mp3");
 buttonSound.volume = 0.2;

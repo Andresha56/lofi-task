@@ -8,6 +8,7 @@ import { getTasks, reset, updateTask } from "../features/tasks/taskSlice";
 import { RootState } from "../app/store";
 import { createTask } from "../features/tasks/taskSlice";
 import { deleteTask } from "../features/tasks/taskSlice";
+import { Flex } from "../styles/Flex.styled";
 
 const buttonSound = new Audio("button_sound.mp3");
 buttonSound.volume = 0.2;
@@ -41,11 +42,18 @@ const TaskTracker = () => {
     dispatch(createTask(newTask));
   };
   return (
-    <StyledTaskTracker>
-      <h1>to-do</h1>
-      <AddTask onAdd={addTask} />
-      <Tasks tasks={tasks} onDelete={removeTask} onToggle={toggleTask} />
-    </StyledTaskTracker>
+    <>
+      <StyledTaskTracker>
+        <h1>to-do</h1>
+        <AddTask onAdd={addTask} />
+        <Tasks tasks={tasks.filter(task => task.isDone) ?? []} onDelete={removeTask} onToggle={toggleTask} />
+        <Flex direction="row" >
+          <button className="completed-task-btn">Completed Tasks</button>
+        </Flex>
+      </StyledTaskTracker>
+
+      <Tasks tasks={tasks.filter(task => !task.isDone) ?? []} onDelete={removeTask} onToggle={toggleTask} />
+    </>
   );
 };
 

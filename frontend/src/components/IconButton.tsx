@@ -10,6 +10,7 @@ interface Props {
   className?: string;
   onClick?: MouseEventHandler;
   type?: string;
+  color?: string;
 }
 
 const IconButton = ({
@@ -19,10 +20,11 @@ const IconButton = ({
   width,
   className,
   onClick,
+  color,
 }: Props) => {
   return (
-    <StyledIconButton onClick={onClick}>
-      <Icon className={className} name={icon} width={width} height={height} />
+    <StyledIconButton onClick={onClick} color={color}>
+      <Icon className={className} name={icon} width={width} height={height} color={color} />
       {text}
     </StyledIconButton>
   );

@@ -16,7 +16,7 @@ const linkSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      default: "lofi hip hop radio - beats to relax/study to",
+      default: "lofi- beats to relax/ study/ work",
     },
   },
   { timestamps: true }

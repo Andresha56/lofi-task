@@ -15,8 +15,8 @@ const initialState = {
   links: [
     {
       _id: "default",
-      url: "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-      title: "lofi hip hop radio - beats to relax/study to",
+      url: "https://www.youtube.com/watch?v=I3OJUwILelU",
+      title: "lofi - beats to relax/ study/ work",
     },
   ],
   isError: false,

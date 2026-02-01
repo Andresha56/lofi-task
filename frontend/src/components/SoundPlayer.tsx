@@ -8,50 +8,50 @@ import { StyledSoundPlayer } from "../styles/SoundPlayer.styled";
 interface Props {
   soundName: string;
   audioFileName: string;
+  volume: number;
+  isActive: boolean;
+  onSelect: () => void;
 }
 
 const buttonSound = new Audio("button_sound.mp3");
 buttonSound.volume = 0.2;
 
-const SoundPlayer = ({ soundName, audioFileName }: Props) => {
+const SoundPlayer = ({
+  soundName,
+  audioFileName,
+  volume,
+  isActive,
+  onSelect,
+}: Props) => {
   const [playing, setPlaying] = useState(true);
-  const [volume, setVolume] = useState(0);
 
   const toggleAudioPlay = () => {
-    buttonSound.play();
-    setPlaying(!playing);
+    onSelect();
+    setPlaying((p) => !p);
   };
 
-  const handleVolumeChange = (newValue: number) => {
-    setVolume(newValue);
-  };
   return (
-    <StyledSoundPlayer>
+    <StyledSoundPlayer
+      className={isActive ? "active" : ""}
+      onClick={onSelect}
+    >
       <IconButton
         onClick={toggleAudioPlay}
         icon={soundName}
-        className={playing ? "full-opacity" : "half-opacity"}
         height={40}
         width={40}
+        color={playing ? "#090909" : "#7e7e7e"}
       />
-      <Slider
-        value={volume}
-        min={0}
-        max={1}
-        step={0.1}
-        onChange={handleVolumeChange}
-        isVertical={true}
-      />
+
       <ReactHowler
         src={audioFileName}
         playing={playing}
-        loop={true}
+        loop
         volume={volume}
       />
     </StyledSoundPlayer>
   );
 };
-
 SoundPlayer.propTypes = {
   soundName: PropTypes.string,
   audioFileName: PropTypes.string,

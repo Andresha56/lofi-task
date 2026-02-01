@@ -1,12 +1,12 @@
-* {
-  font-family: "Unibody";
-}
+@import url("https://fonts.googleapis.com/css2?family=family=Inconsolata:wght@200ital:wght@300;400;500;600;700&display=swap");
 
-@font-face {
-  font-family: "Unibody";
-  src: url("fonts/Unibody.otf") format("opentype");
+* {
+    font-family: "Inconsolata", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  overscroll-behavior-y: none;
+    overscroll-behavior-y: none;
 }

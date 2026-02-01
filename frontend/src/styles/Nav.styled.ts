@@ -10,10 +10,6 @@ export const StyledNav = styled.nav`
   width: 100%;
   gap: 15px;
 
-  h1 {
-    font-size: 16px;
-  }
-
   li {
     list-style-type: none;
   }

@@ -10,12 +10,8 @@ export const StyledSlider = styled.input<Props>`
   background: transparent;
   cursor: pointer;
   overflow: hidden;
-  height: 13px;
-  max-width: 80px;
-
-  /* If isVertical is true, adjust to vertical orientation */
-  transform: ${({ isVertical }) =>
-    isVertical === true ? "rotate(270deg)" : ""};
+  height: 5px;
+  border-radius: 5px;
 
   /******** Chrome, Safari, Opera and Edge Chromium styles ********/
   &::-webkit-slider-runnable-track {
@@ -31,7 +27,7 @@ export const StyledSlider = styled.input<Props>`
     width: 1px;
     outline: none;
     background-color: ${({ value }) =>
-      value === 0 ? "transparent" : ({ theme }) => theme.colors.primaryTextColor};
+    value === 0 ? "transparent" : ({ theme }) => theme.colors.primaryTextColor};
     box-shadow: -80px 0 0 80px ${({ theme }) => theme.colors.primaryTextColor};
   }
 
