@@ -18,7 +18,7 @@ Choose from multiple ambient sounds
 Customize the background for a personalized experience
 
 🖼️ Platform Preview
-<img width="1917" height="868" alt="Lofi-Tasks UI" src="https://github.com/user-attachments/assets/e01b275f-8778-4639-851e-31a9c469709c" />
+<img width="1720" height="853" alt="Screenshot 2026-02-02 115118" src="https://github.com/user-attachments/assets/5d0c0117-f456-47a5-be49-f7c4b4b724a5" />
 
 🗄️ Database Structure
 <img width="1473" height="873" alt="Database Schema" src="https://github.com/user-attachments/assets/1c9b29e4-4ca5-4ffa-b3db-5690cad79641" />
