@@ -24,12 +24,12 @@ const Dashboard = () => {
   const [showCustomPicker, setShowCustomPicker] = useState(false);
 
   const [volumes, setVolumes] = useState<Record<string, number>>({
-    rain: 0,
-    fire: 0,
-    wind: 0,
-    bird: 0,
-    moon: 0,
-    coffee: 0,
+    rain: 0.5,
+    fire: 0.5,
+    wind: 0.5,
+    bird: 0.5,
+    moon: 0.5,
+    coffee: 0.5,
   });
 
   const handleVolumeChange = (value: number) => {
