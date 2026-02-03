@@ -66,6 +66,7 @@ const Register = () => {
   return (
     <>
       <Nav />
+
       <StyledRegister>
         <section className="heading">
           <h1>Register</h1>
