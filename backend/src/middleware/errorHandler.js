@@ -1,11 +1,10 @@
-const errorHandler = (err, req, res) => {
-  // If there is no status code, default to 500 Internal Server Error
-  const statusCode = res.statusCode ? res.statusCode : 500;
-  res.status(statusCode);
+const errorHandler = (err, req, res, next) => {
+  const statusCode =
+    res.statusCode && res.statusCode !== 200 ? res.statusCode : 500;
 
-  res.json({
+  res.status(statusCode).json({
     message: err.message,
-    stack: process.env.ENV === "prod" ? null : err.stack,
+    stack: process.env.NODE_ENV === "production" ? null : err.stack,
   });
 };
 
